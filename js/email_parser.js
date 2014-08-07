@@ -9,5 +9,17 @@ var alMightyButton = document.getElementById('parse_order');
 // startListening(alMightyButton);
 
 function detector(inputString){
-  return inputString.indexOf("at") != -1;
+  var cases = ['at', 'AT'];
+  var finalJudge = false;
+  var judge;
+
+  for i in cases{
+    if (inputString.indexOf(case[i]) != -1){
+       judge = false;
+    } else {
+       judge = true;
+    }
+    finalJudge = finalJudge || judge;
+  }
+  return finalJudge;
 }
