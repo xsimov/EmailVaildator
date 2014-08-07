@@ -7,6 +7,9 @@ describe("the email parser", function(){
       expect(detector("blatblahblah")).toBeTruthy();
     });
 
+    it("searches for the string 'AT' ", function(){
+      expect(detector("blATblahblah")).toBeTruthy();
+    });
   })
 
 
