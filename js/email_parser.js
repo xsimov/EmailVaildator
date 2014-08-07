@@ -9,5 +9,5 @@ var alMightyButton = document.getElementById('parse_order');
 // startListening(alMightyButton);
 
 function detector(inputString){
-  return;
+  return inputString.indexOf("at") != -1;
 }
