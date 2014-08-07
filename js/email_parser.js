@@ -7,3 +7,7 @@ function startListening(btn){
 var alMightyButton = document.getElementById('parse_order');
 
 // startListening(alMightyButton);
+
+function detector(inputString){
+  return;
+}
