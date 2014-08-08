@@ -9,44 +9,47 @@ var button = document.getElementById('clean-button');
 
 startListening(button, originalContainer, finalDestination);
 
-function converter(paragraph) {
-  if (atExistsButNotInTheBegining(paragraph) &&
-    atIsNotInTheEnd(paragraph) &&
-    dotIsNotInTheEnd(paragraph) &&
-    dotExistsButNotInTheBegining(paragraph) &&
-    thereIsADotAfterTheAt(paragraph)
+function converter(word) {
+
+//slice per spaces still to do
+
+  if (atExistsButNotInTheBegining(word) &&
+    atIsNotInTheEnd(word) &&
+    dotIsNotInTheEnd(word) &&
+    dotExistsButNotInTheBegining(word) &&
+    thereIsADotAfterTheAt(word)
     ) {
-    var output = paragraph.replace('AT', '@').replace('DOT', '.');
+    var output = word.replace('AT', '@').replace('DOT', '.');
     return output;
   }
-  return paragraph;
+  return word;
 
-  function atExistsButNotInTheBegining(paragraph){
-    return ((paragraph.indexOf('AT') > 0) || (paragraph.indexOf('@') > 0));
+  function atExistsButNotInTheBegining(word){
+    return ((word.indexOf('AT') > 0) || (word.indexOf('@') > 0));
   }
 
-  function dotExistsButNotInTheBegining(paragraph){
-    return ((paragraph.indexOf('.') > 0) || (paragraph.indexOf('DOT') > 0));
+  function dotExistsButNotInTheBegining(word){
+    return ((word.indexOf('.') > 0) || (word.indexOf('DOT') > 0));
   }
 
-  function atIsNotInTheEnd(paragraph){
+  function atIsNotInTheEnd(word){
     var AtToken = "AT";
     var AtSymbol = "@";
-    return ((paragraph.indexOf(AtToken) < (paragraph.length - AtToken.length)) &&
-        (paragraph.indexOf(AtSymbol) < (paragraph.length - AtSymbol.length)));
+    return ((word.indexOf(AtToken) < (word.length - AtToken.length)) &&
+        (word.indexOf(AtSymbol) < (word.length - AtSymbol.length)));
   }
 
-  function dotIsNotInTheEnd(paragraph){
+  function dotIsNotInTheEnd(word){
     var AtToken = "AT";
     var AtSymbol = "@";
-    return ((paragraph.indexOf('.') < (paragraph.length - 1)) &&
-        (paragraph.indexOf('DOT') < (paragraph.length - 3)));
+    return ((word.indexOf('.') < (word.length - 1)) &&
+        (word.indexOf('DOT') < (word.length - 3)));
   }
 
-  function thereIsADotAfterTheAt (paragraph) {
-    var passingText = paragraph.replace('AT', '@').replace('DOT', '.');
+  function thereIsADotAfterTheAt (word) {
+    var passingText = word.replace('AT', '@').replace('DOT', '.');
     var atPosition = passingText.indexOf('@');
-    var halfString = passingText.slice(atPosition);
+    var halfString = passingText.slice(atPosition + 1);
     if (halfString.indexOf('.') > 0) {
       return true;
     };
