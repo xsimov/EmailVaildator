@@ -44,15 +44,12 @@ function converter(paragraph) {
   }
 
   function thereIsADotAfterTheAt (paragraph) {
-    var passingText = paragraph.replace('AT', '@');
+    var passingText = paragraph.replace('AT', '@').replace('DOT', '.');
     var atPosition = passingText.indexOf('@');
-    var halfString = paragraph.slice(passingText);
-    if (halfstring.indexOf()) {};
-
-
-
-    // return ((paragraph.indexOf('AT') < paragraph.indexOf('.')) ||
-    // (paragraph.indexOf('AT') < paragraph.indexOf('DOT')) ||
-    // (paragraph.indexOf('@') < paragraph.indexOf('DOT'))); //!!!!!!!!
+    var halfString = passingText.slice(atPosition);
+    if (halfString.indexOf('.') > 0) {
+      return true;
+    };
+    return false;
   }
 }
