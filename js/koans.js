@@ -16,7 +16,18 @@ describe("Camouflaged email converter", function() {
     expect(converter('gm@ilDOT')).toBe('gm@ilDOT');
     expect(converter('gmailDOT@')).toBe('gmailDOT@');
     expect(converter('gm.ailATgmailcom')).toBe('gm.ailATgmailcom');
+    expect(converter('oscar.xavierATgmail.com')).toBe('oscar.xavier@gmail.com');
   });
 
+
+  it("returns a valid email if format was correct", function(){
+
+    the_user_puts_some_input('ruruATgmail.com');
+
+    the_user_asks_for_the_conversion();
+
+    the_app_outputs_the_result('ruru@gmail.com');
+
+  });
 
 });

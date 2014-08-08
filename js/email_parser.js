@@ -11,10 +11,10 @@ startListening(button, originalContainer, finalDestination);
 
 function converter(paragraph) {
   if (atExistsButNotInTheBegining(paragraph) &&
-    atIsNotInTheEnd(paragraph) &&
-    dotIsNotInTheEnd(paragraph) &&
-    dotExistsButNotInTheBegining(paragraph) &&
-    thereIsADotAfterTheAt(paragraph)) {
+      atIsNotInTheEnd(paragraph) &&
+      dotIsNotInTheEnd(paragraph) &&
+      dotExistsButNotInTheBegining(paragraph) &&
+      thereIsADotAfterTheAt(paragraph)) {
     var output = paragraph.replace('AT', '@').replace('DOT', '.');
     return output;
   }
