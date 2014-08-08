@@ -11,10 +11,11 @@ startListening(button, originalContainer, finalDestination);
 
 function converter(paragraph) {
   if (atExistsButNotInTheBegining(paragraph) &&
-      atIsNotInTheEnd(paragraph) &&
-      dotIsNotInTheEnd(paragraph) &&
-      dotExistsButNotInTheBegining(paragraph) &&
-      thereIsADotAfterTheAt(paragraph)) {
+    atIsNotInTheEnd(paragraph) &&
+    dotIsNotInTheEnd(paragraph) &&
+    dotExistsButNotInTheBegining(paragraph) &&
+    thereIsADotAfterTheAt(paragraph)
+    ) {
     var output = paragraph.replace('AT', '@').replace('DOT', '.');
     return output;
   }
@@ -43,8 +44,15 @@ function converter(paragraph) {
   }
 
   function thereIsADotAfterTheAt (paragraph) {
-    return ((paragraph.indexOf('AT') < paragraph.indexOf('.')) ||
-    (paragraph.indexOf('AT') < paragraph.indexOf('DOT')) ||
-    (paragraph.indexOf('@') < paragraph.indexOf('DOT'))); //!!!!!!!!
+    var passingText = paragraph.replace('AT', '@');
+    var atPosition = passingText.indexOf('@');
+    var halfString = paragraph.slice(passingText);
+    if (halfstring.indexOf()) {};
+
+
+
+    // return ((paragraph.indexOf('AT') < paragraph.indexOf('.')) ||
+    // (paragraph.indexOf('AT') < paragraph.indexOf('DOT')) ||
+    // (paragraph.indexOf('@') < paragraph.indexOf('DOT'))); //!!!!!!!!
   }
 }
